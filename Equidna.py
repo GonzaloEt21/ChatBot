@@ -10,7 +10,7 @@ st.set_page_config(page_title="Equidna IA",
 
 def confUser():
     secretKey = st.secrets["apiKey"]
-    return Groq(api_key = secretKey)
+    return Groq.Client(api_key = secretKey)
 
 def confModel(userClient, userModel, message):
     try:
