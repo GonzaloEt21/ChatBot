@@ -10,18 +10,13 @@ st.set_page_config(page_title="Equidna IA",
 
 def confUser():
     secretKey = st.secrets["apiKey"]
-    return Groq.Client(api_key = secretKey)
+    return Groq(api_key = secretKey)
 
 def confModel(userClient, userModel, message):
-    try:
-        result = userClient.chat.completions.create(
-            model=userModel,
-            messages=[{"role": "user", "content": message}],
-        )
-        return result
-    except Exception as e:
-        print(f"Error al crear la completación con Groq: {e}")
-        raise
+    result = userClient.chat.completions.create(
+          model=userModel,
+          messages=[{"role": "user", "content": message}],
+      )
 
 def answer(completeChat):
     completAnwser = ""
