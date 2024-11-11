@@ -1,7 +1,7 @@
 import streamlit as st
 import groq as Groq
 
-models = ["llama3-8b-8192","llama3-70b-8192","mixtral-8x7b-32768"]
+models =  ["Equidana", "Mongo", "Safirus"]
 
 st.set_page_config(page_title="Equidna IA",
                        page_icon="./Equidna.png", 
